@@ -10,10 +10,13 @@ Para trabalhar com Angular você precisa instalar as ferramentas abaixo:
 
 
 Comando para criar um novo projeto: 
+
 	"ng new nomeDoProjeto"
 
 Rodar o projeto:
+
 	"ng serve"
 
 Gerar uma entrega do projeto:	
+
 	"ng build"
