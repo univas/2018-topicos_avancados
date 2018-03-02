@@ -1,18 +1,14 @@
 <h1>Bem vindo à UNIVÁS!</h1>
 
-<p>Nome: {{ aluno.nome | uppercase }} </p>
-<p>E-mail: {{ aluno.email | lowercase }} </p>
-<p>CPF: {{ aluno.cpf | cpfFilter }} </p>
-<p>Telefone: {{ aluno.telefone }} </p>
-<p>Data de Nascimento: {{ aluno.dataNascimento | date : 'shortDate' }}</p>
-<p>Data de Nascimento: {{ aluno.dataNascimento | date : 'longDate' }}</p>
-<p>Data de Nascimento: {{ aluno.dataNascimento | date : 'fullDate' }}</p>
-<p>Data de Nascimento: {{ aluno.dataNascimento | date : 'dd-MM-yyyy' }}</p>
-<p>Data de Nascimento: {{ aluno.dataNascimento | date : 'MM/yy' }}</p>
-
-<p>Peso: {{ aluno.peso | number}}</p>
-<p>Peso: {{ aluno.peso | number : '1.3-6'}}</p>
-<p>Peso: {{ aluno.peso | number : '6.0-1'}}</p>
+<div *ngFor="let aluno of alunos">
+    <h3>:::Novo aluno:::</h3>
+    <p>Nome: {{ aluno.nome | uppercase }} </p>
+    <p>E-mail: {{ aluno.email | lowercase }} </p>
+    <p>CPF: {{ aluno.cpf | cpfFilter }} </p>
+    <p>Telefone: {{ aluno.telefone | telefoneFilter : true }} </p>
+    <p>Data de Nascimento: {{ aluno.dataNascimento | date : 'MM/yy' }}</p>
+    <p>Peso: {{ aluno.peso | number }}</p>
+</div>
 
 
 
