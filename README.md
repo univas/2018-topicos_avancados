@@ -22,4 +22,5 @@ Gerar uma entrega do projeto:
 	"ng build"
 
 Gerar um novo filter (ou pipe!):
+
 	"ng generate pipe cpfFilter"
