@@ -1,14 +1,20 @@
-<h1>Bem vindo à UNIVÁS!</h1>
+<h1>Bem vindo à {{ title }}!</h1>
 
-<div *ngFor="let aluno of alunos">
-    <h3>:::Novo aluno:::</h3>
-    <p>Nome: {{ aluno.nome | uppercase }} </p>
-    <p>E-mail: {{ aluno.email | lowercase }} </p>
-    <p>CPF: {{ aluno.cpf | cpfFilter }} </p>
-    <p>Telefone: {{ aluno.telefone | telefoneFilter : true }} </p>
-    <p>Data de Nascimento: {{ aluno.dataNascimento | date : 'MM/yy' }}</p>
-    <p>Peso: {{ aluno.peso | number }}</p>
+<h2>Lista de alunos</h2>
+
+<ul *ngFor="let aluno of alunos">
+    <li (click)="setSelectedAluno(aluno)">Nome: {{ aluno.nome | uppercase }} 
+        E-mail: {{ aluno.email | lowercase }} </li>
+</ul>
+
+<div *ngIf="currentAluno">
+    <h3>Detalhes do aluno:</h3>
+    <p>Nome: {{ currentAluno.nome | uppercase }} </p>
+    <p>E-mail: {{ currentAluno.email | lowercase }} </p>
+    <p>CPF: {{ currentAluno.cpf | cpfFilter }} </p>
+    <p>Telefone: {{ currentAluno.telefone | telefoneFilter : true }} </p>
+    <p>Data de Nascimento: {{ currentAluno.dataNascimento | date : 'MM/yy' }}</p>
+    <p>Peso: {{ currentAluno.peso | number }}</p>
 </div>
-
 
 
