@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+    color: #8f8981;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.carta-card {
+    border: 1px solid #8f8981;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+p.name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+textarea {
+    width: 99%;
+}
