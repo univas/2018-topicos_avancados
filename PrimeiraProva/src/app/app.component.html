@@ -1,0 +1,26 @@
+<h1>Cadastro de cidades</h1>
+
+<label for="state_name">Nome: 
+  <input type="text" name="state_name" id="state_name" [(ngModel)]="newCity.name">
+</label>
+
+<label for="state_initial">Estado: 
+  <input type="text" name="state_initial" id="state_initial" [(ngModel)]="newCity.state">
+</label>
+
+<input type="button" value="Salvar" (click)="save()">
+
+<div *ngIf="cities.length > 0">
+  <h2>Cidades Cadastradas:</h2>
+  
+  <table>
+    <tr>
+      <th>Cidade</th>
+      <th>Estado</th>
+    </tr>
+    <tr *ngFor="let city of cities">
+      <td>{{ city.name }}</td>
+      <td>{{ city.state | state }}</td>
+    </tr>
+  </table>
+</div>
