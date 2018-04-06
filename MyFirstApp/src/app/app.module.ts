@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CpfFilterPipe } from './cpf-filter.pipe';
 import { TelefoneFilterPipe } from './telefone-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { AlunoDetailComponent } from './aluno-detail/aluno-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CpfFilterPipe,
-    TelefoneFilterPipe
+    TelefoneFilterPipe,
+    AlunoDetailComponent
   ],
   imports: [
     BrowserModule,

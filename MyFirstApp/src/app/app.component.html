@@ -28,14 +28,5 @@
     </tr>
 </table>
 
-<div *ngIf="currentAluno">
-    <h3>Detalhes do aluno:</h3>
-    <p>Nome: {{ currentAluno.nome | uppercase }} </p>
-    <p>E-mail: {{ currentAluno.email | lowercase }} </p>
-    <p>CPF: {{ currentAluno.cpf | cpfFilter }} </p>
-    <p>Telefone: {{ currentAluno.telefone | telefoneFilter : true }} </p>
-    <p>Data de Nascimento: {{ currentAluno.dataNascimento | date : 'MM/yy' }}</p>
-    <p>Peso: {{ currentAluno.peso | number }}</p>
-</div>
-
+<app-aluno-detail [aluno]="currentAluno"></app-aluno-detail>
 

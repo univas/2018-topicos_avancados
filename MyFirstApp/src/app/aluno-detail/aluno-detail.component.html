@@ -1,0 +1,9 @@
+<div *ngIf="aluno">
+  <h3>Detalhes do aluno:</h3>
+  <p>Nome: {{ aluno.nome | uppercase }} </p>
+  <p>E-mail: {{ aluno.email | lowercase }} </p>
+  <p>CPF: {{ aluno.cpf | cpfFilter }} </p>
+  <p>Telefone: {{ aluno.telefone | telefoneFilter : true }} </p>
+  <p>Data de Nascimento: {{ aluno.dataNascimento | date : 'MM/yy' }}</p>
+  <p>Peso: {{ aluno.peso | number }}</p>
+</div>

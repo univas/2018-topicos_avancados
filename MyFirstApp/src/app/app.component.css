@@ -12,12 +12,6 @@ td, th {
     border: 1px solid black;
 }
 
-div {
-    width: 250px;
-    border: 1px solid black;
-    float: right;
-}
-
 label {
     display: block;
     margin: 10px;
