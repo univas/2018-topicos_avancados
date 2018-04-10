@@ -1,0 +1,14 @@
+table {
+    border-collapse: collapse;
+    padding: 10px;
+    float: left;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+label {
+    display: block;
+    margin: 10px;
+}

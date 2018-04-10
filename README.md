@@ -23,4 +23,12 @@ Gerar uma entrega do projeto:
 
 Gerar um novo filter (ou pipe!):
 
-	"ng generate pipe cpfFilter"
+	"ng generate pipe nomeDoPipe"
+	
+Gerar um novo componente
+
+	"ng generate component nomeDoComponente"
+
+Gerar um novo module
+
+	"ng generate module nomeDoModule --flat --module=app"

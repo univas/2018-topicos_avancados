@@ -1,0 +1,29 @@
+<h2>Lista de alunos</h2>
+
+<fieldset>
+    <legend>Novo aluno</legend>
+    <label for="nome">Nome: <input [(ngModel)]="newAluno.nome" type="text" id="nome"></label>
+    <label for="email">E-mail: <input [(ngModel)]="newAluno.email" type="email" id="email"></label>
+    <label for="cpf">CPF: <input [(ngModel)]="newAluno.cpf" type="text" id="cpf"></label>
+    <label for="telefone"> Telefone: <input [(ngModel)]="newAluno.telefone" type="text" id="telefone"></label>
+    <label for="nascimento">Data de Nascimento: <input [(ngModel)]="newAluno.dataNascimento" type="text" id="nascimento"></label>
+    <label for="peso">Peso: <input [(ngModel)]="newAluno.peso" type="number" id="peso"></label>
+    <input (click)="saveAluno()" type="button" value="Salvar">
+</fieldset>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Detalhes</th>
+    </tr>
+    <tr *ngFor="let aluno of alunos">
+        <td>{{ aluno.nome }}</td>
+        <td>{{ aluno.email }}</td>
+        <td>
+            <input type="button" value="+ Detalhes" (click)="setSelectedAluno(aluno)">
+        </td>
+    </tr>
+</table>
+
+<app-aluno-detail [aluno]="currentAluno"></app-aluno-detail>
