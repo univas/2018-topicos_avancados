@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ALUNOS_MOCK } from '../alunos-mock';
 import { Aluno } from '../aluno';
+import { FetchAlunosService } from '../fetch-alunos.service';
 
 @Component({
   selector: 'app-aluno',
@@ -9,17 +10,24 @@ import { Aluno } from '../aluno';
 })
 export class AlunoComponent implements OnInit {
 
-  alunos = ALUNOS_MOCK;
+  alunos : Aluno[];
 
   currentAluno : Aluno;
 
   newAluno : Aluno;
   
-  constructor() {
+  constructor(private alunosService : FetchAlunosService) {
     this.newAluno = new Aluno();
   }
 
   ngOnInit() {
+    this.getAlunos();
+  }
+
+  getAlunos() {
+    this.alunosService.getAlunos().subscribe(
+      alunos_server => this.alunos = alunos_server
+    );
   }
 
   setSelectedAluno(aluno: Aluno) {

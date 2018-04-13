@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AlunoDetailComponent } from './aluno-detail/aluno-detail.component';
 import { AlunoComponent } from './aluno/aluno.component';
 import { AppRouteModule } from './/app-route.module';
+import { FetchAlunosService } from './fetch-alunos.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { AppRouteModule } from './/app-route.module';
     FormsModule,
     AppRouteModule
   ],
-  providers: [],
+  providers: [FetchAlunosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
