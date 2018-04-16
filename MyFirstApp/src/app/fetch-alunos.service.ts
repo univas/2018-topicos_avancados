@@ -13,5 +13,11 @@ export class FetchAlunosService {
   getAlunos() : Observable<Aluno[]> {
     return of(ALUNOS_MOCK);
   }
+
+  getAlunoById(id: number) : Observable<Aluno> {
+    return of (ALUNOS_MOCK.find(
+      aluno => aluno.id === id
+    ));
+  }
   
 }

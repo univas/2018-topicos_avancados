@@ -21,9 +21,7 @@
         <td>{{ aluno.nome }}</td>
         <td>{{ aluno.email }}</td>
         <td>
-            <input type="button" value="+ Detalhes" (click)="setSelectedAluno(aluno)">
+            <a routerLink="/aluno/{{aluno.id}}">+ Detalhes</a>
         </td>
     </tr>
 </table>
-
-<app-aluno-detail [aluno]="currentAluno"></app-aluno-detail>

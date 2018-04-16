@@ -12,8 +12,6 @@ export class AlunoComponent implements OnInit {
 
   alunos : Aluno[];
 
-  currentAluno : Aluno;
-
   newAluno : Aluno;
   
   constructor(private alunosService : FetchAlunosService) {
@@ -30,19 +28,9 @@ export class AlunoComponent implements OnInit {
     );
   }
 
-  setSelectedAluno(aluno: Aluno) {
-    this.currentAluno = aluno;
-  }
-
   saveAluno() {
-    console.log(this.newAluno.nome);
-    console.log(this.newAluno.email);
-    console.log(this.newAluno.cpf);
-    console.log(this.newAluno.telefone);
-    console.log(this.newAluno.dataNascimento);
-    console.log(this.newAluno.peso);
-
     let alunoToSave = new Aluno();
+    alunoToSave.id = (new Date()).getTime();
     alunoToSave.nome = this.newAluno.nome;
     alunoToSave.email = this.newAluno.email;
     alunoToSave.cpf = this.newAluno.cpf;
@@ -51,7 +39,7 @@ export class AlunoComponent implements OnInit {
     alunoToSave.peso = this.newAluno.peso;
 
     this.alunos.push(alunoToSave);
+    this.newAluno = new Aluno();
   }
-
 
 }
