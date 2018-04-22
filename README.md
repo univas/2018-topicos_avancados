@@ -32,3 +32,7 @@ Gerar um novo componente
 Gerar um novo module
 
 	"ng generate module nomeDoModule --flat --module=app"
+
+Gerar um novo serviço
+
+	"ng generate service nomeDoService --module=app"
