@@ -1,0 +1,12 @@
+<h2>Departamentos</h2>
+
+<fieldset>
+  <legend>Novo Departamento</legend>
+  <div>
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="newDepartment.name" />
+    <span class="error" *ngIf="showMessageError">Campo obrigatório</span>
+  </div>
+
+  <input type="button" value="Salvar" (click)="saveDepartment()">
+</fieldset>
