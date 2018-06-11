@@ -10,3 +10,11 @@
 
   <input type="button" value="Salvar" (click)="saveDepartment()">
 </fieldset>
+
+<ul>
+  <li *ngFor="let department of departments">
+    <span>{{ department.name }}</span>
+    <input type="button" value="Editar" (click)="editDepartment(department)" />
+    <input type="button" value="Excluir" (click)="deleteDepartment(department)" />
+  </li>
+</ul>

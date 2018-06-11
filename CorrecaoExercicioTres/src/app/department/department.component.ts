@@ -45,4 +45,14 @@ export class DepartmentComponent implements OnInit {
     }
   }
 
+  editDepartment(department: Department) {
+    this.newDepartment = new Department(
+      department.id, department.name
+    );
+  }
+
+  deleteDepartment(department: Department) {
+    this.departmentService.deleteDepartment(department);
+    this.loadDepartments();
+  }
 }

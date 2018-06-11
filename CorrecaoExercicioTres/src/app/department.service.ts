@@ -23,5 +23,9 @@ export class DepartmentService {
     existDepartment.name = department.name;
   }
 
+  deleteDepartment(department: Department) {
+    let index = this.departments.indexOf(department);
+    this.departments.splice(index, 1);
+  }
 
 }
