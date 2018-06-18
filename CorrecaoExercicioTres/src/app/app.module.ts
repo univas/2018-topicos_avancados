@@ -8,6 +8,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { RouteModule } from './route/route.module';
 import { DepartmentService } from './department.service';
 import { FormsModule } from '@angular/forms';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     RouteModule,
     FormsModule
   ],
-  providers: [DepartmentService],
+  providers: [DepartmentService, EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

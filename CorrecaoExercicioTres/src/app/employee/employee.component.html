@@ -1,3 +1,42 @@
-<p>
-  employee works!
-</p>
+<h2>Funcionários</h2>>
+
+<fieldset>
+  <legend>Novo Funcionário</legend>
+  <div>
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="newEmployee.name" />
+    <span *ngIf="showMessageError1" class="error">Campo obrigatório</span>
+  </div>
+  <div>
+    <label>CPF:</label>
+    <input type="text" [(ngModel)]="newEmployee.cpf" />
+    <span *ngIf="showMessageError2" class="error">Campo obrigatório</span>
+  </div>
+  <div>
+    <label>E-mail:</label>
+    <input type="email" [(ngModel)]="newEmployee.email" />
+    <span *ngIf="showMessageError3" class="error">Campo obrigatório</span>
+  </div>
+  <div>
+    <label>Departamento:</label>
+    <select [(ngModel)]="newEmployee.department" >
+      <option *ngFor="let department of departments" [ngValue]="department">
+        {{department.name}}
+      </option>
+    </select>
+    <span *ngIf="showMessageError4" class="error">Campo obrigatório</span>
+  </div>
+  <input type="button" value="Salvar" (click)="saveEmployee()" />
+</fieldset>
+
+<ul>
+  <li *ngFor="let employee of employees">
+    <span>{{ employee.name }}</span>
+    <span>{{ employee.cpf }}</span>
+    <span>{{ employee.email }}</span>
+    <span>{{ employee.department.name }}</span>
+    <input type="button" value="Editar" (click)="editEmployee(employee)" />
+    <input type="button" value="Excluir" (click)="deleteEmployee(employee)" />
+      <span></span>
+  </li>
+</ul>
