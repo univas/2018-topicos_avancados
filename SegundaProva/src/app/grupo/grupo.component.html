@@ -1,0 +1,20 @@
+<h2>Grupos</h2>
+
+<fieldset>
+  <legend>Novo Grupo</legend>
+  <div>
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="newGroup.name"/>
+    <span *ngIf="showMessageError" class="error">Campo obrigatório</span>
+  </div>
+  
+  <input type="button" value="Salvar" (click)="saveGroup()"/>
+</fieldset>
+
+<ul>
+  <li *ngFor="let group of groups">
+    <span>{{ group.name }}</span>
+    <input type="button" value="Editar" (click)="editGroup(group)" />
+    <input type="button" value="Excluir" (click)="deleteGroup(group)" />
+  </li>
+</ul>
